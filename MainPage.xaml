@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_123123.MainPage"
+             Title="Lista Notatek">
+    <StackLayout Padding="10">
+        <!-- Pole edycyjne i przycisk w linii poziomej -->
+        <StackLayout Orientation="Horizontal" Spacing="10">
+            <Entry x:Name="NewItemEntry"
+                   Placeholder="Nowy element"
+                   HorizontalOptions="FillAndExpand"/>
+            <Button Text="DODAJ"
+                    BackgroundColor="#DC143C"
+                    TextColor="White"
+                    Clicked="OnAddItemClicked"/>
+        </StackLayout>
+
+        <!-- Lista elementów -->
+        <ListView x:Name="ItemsListView" SeparatorColor="#DC143C" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
+
+
